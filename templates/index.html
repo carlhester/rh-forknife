@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forknife</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Forknife Stats
+      </h1>
+      <h2 class="subtitle">
+        Robohftw Lifetime Stats
+      </h2>
+    </div>
+  </div>
+</section>
+<section>
+<div class="container">
+<nav class="level">
+  <div class="level-item has-text-centered">
+    {% if stats %}
+    <div>
+      <p class="heading">Matches</p>
+      <p class="title">{{ stats['matches'] }} </p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Wins</p>
+      <p class="title">{{ stats['wins'] }} </p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Kills</p>
+      <p class="title">{{ stats['kills'] }} </p>
+    </div>
+    {% endif %}
+  </div>
+</nav>
+</section>
+  </body>
+</html>
