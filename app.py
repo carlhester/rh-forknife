@@ -31,10 +31,11 @@ def get_stats_from_data():
         if r['key'] == "Kills": temp_dict['kills'] = r['value']
         if r['key'] == "Matches Played": temp_dict['matches'] = r['value']
         if r['key'] == "Wins": temp_dict['wins'] = r['value']
+        if r['key'] == "Top 3s": temp_dict['top3'] = r['value']
+        if r['key'] == "Top 12s": temp_dict['top12'] = r['value']
+        if r['key'] == "Top 25s": temp_dict['top25'] = r['value']
 
     return temp_dict
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-

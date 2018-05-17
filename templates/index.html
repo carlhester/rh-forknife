@@ -45,5 +45,30 @@
   </div>
 </nav>
 </section>
+<section>
+<div class="container">
+<nav class="level">
+  <div class="level-item has-text-centered">
+    {% if stats %}
+    <div>
+      <p class="heading">Top 3</p>
+      <p class="title">{{ stats['top3'] }} </p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Top 12</p>
+      <p class="title">{{ stats['top12'] }} </p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Top 25</p>
+      <p class="title">{{ stats['top25'] }} </p>
+    </div>
+    {% endif %}
+  </div>
+</nav>
+</section>
   </body>
 </html>
