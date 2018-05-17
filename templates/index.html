@@ -8,67 +8,61 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
   <body>
-<section class="hero is-dark">
+<div class="hero is-dark">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Fortnite Stats
+        RobohFTW Fortnite Stats
       </h1>
-      <h2 class="subtitle">
-        Robohftw Lifetime Stats
-      </h2>
     </div>
   </div>
-</section>
-<section>
-<div class="container">
-<nav class="level">
-  <div class="level-item has-text-centered">
-    {% if stats %}
-    <div>
-      <p class="heading">Matches</p>
-      <p class="title">{{ stats['matches'] }} </p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Wins</p>
-      <p class="title">{{ stats['wins'] }} </p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Kills</p>
-      <p class="title">{{ stats['kills'] }} </p>
-    </div>
+</div>
+ {% if stats %}
+ <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">{{ stats['matches'] }}</p>
+                                <p class="subtitle">Games</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title is-1">{{ stats['wins'] }}</p>
+                                <p class="subtitle">Wins</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">{{ stats['kills'] }}</p>
+                                <p class="subtitle">Frags</p>
+                            </article>
+                        </div>
+                    </div>
+  </section>
+ <section class="info-tiles">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">{{ stats['top12'] }}</p>
+                                <p class="subtitle">Top12</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">{{ stats['top3'] }}</p>
+                                <p class="subtitle">Top3</p>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child box">
+                                <p class="title">{{ stats['top25'] }}</p>
+                                <p class="subtitle">Top25</p>
+                            </article>
+                        </div>
+                    </div>
+  </section>
     {% endif %}
-  </div>
-</nav>
-</section>
-<section>
-<div class="container">
-<nav class="level">
-  <div class="level-item has-text-centered">
-    {% if stats %}
-    <div>
-      <p class="heading">Top 3</p>
-      <p class="title">{{ stats['top3'] }} </p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Top 12</p>
-      <p class="title">{{ stats['top12'] }} </p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Top 25</p>
-      <p class="title">{{ stats['top25'] }} </p>
-    </div>
-    {% endif %}
-  </div>
-</nav>
-</section>
-  </body>
+</body>
+
 </html>
