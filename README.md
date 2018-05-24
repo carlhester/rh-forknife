@@ -1,15 +1,17 @@
-app: Python flask
-data: https://fortnitetracker.com/site-api
-css: bulma
-web: nginx proxy to gunicorn
-hosting: aws lightsail
+#Tools
+
+## app: Python flask
+## data: https://fortnitetracker.com/site-api
+## css: bulma
+## web: nginx proxy to gunicorn
+## hosting: aws lightsail
 
 
-# gunicorn
+## gunicorn
 gunicorn -w 1 --access-logfile logfile -b 0.0.0.0:5000 app:app
 
 
-# nginx proxy config stanza in /etc/nginx/nginx.conf:
+## nginx proxy config stanza in /etc/nginx/nginx.conf:
     server {
         listen       80 default_server;
         #listen       [::]:80 default_server;
