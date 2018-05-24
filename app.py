@@ -24,9 +24,8 @@ def index():
 
 def get_stats_from_data():
     temp_dict = {} 
-    r = requests.get(URL, headers=headers)
-    #print(r.from_cache)
     try:
+        r = requests.get(URL, headers=headers)
         results = r.json()['lifeTimeStats']
         for r in results:
             if r['key'] == "Kills": temp_dict['kills'] = r['value']
