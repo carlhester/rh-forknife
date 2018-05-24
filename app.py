@@ -23,17 +23,20 @@ def index():
     return render_template('index.html', stats=stats)
 
 def get_stats_from_data():
+    temp_dict = {} 
     r = requests.get(URL, headers=headers)
     #print(r.from_cache)
-    results = r.json()['lifeTimeStats']
-    temp_dict = {} 
-    for r in results:
-        if r['key'] == "Kills": temp_dict['kills'] = r['value']
-        if r['key'] == "Matches Played": temp_dict['matches'] = r['value']
-        if r['key'] == "Wins": temp_dict['wins'] = r['value']
-        if r['key'] == "Top 3s": temp_dict['top3'] = r['value']
-        if r['key'] == "Top 12s": temp_dict['top12'] = r['value']
-        if r['key'] == "Top 25s": temp_dict['top25'] = r['value']
+    try:
+        results = r.json()['lifeTimeStats']
+        for r in results:
+            if r['key'] == "Kills": temp_dict['kills'] = r['value']
+            if r['key'] == "Matches Played": temp_dict['matches'] = r['value']
+            if r['key'] == "Wins": temp_dict['wins'] = r['value']
+            if r['key'] == "Top 3s": temp_dict['top3'] = r['value']
+            if r['key'] == "Top 12s": temp_dict['top12'] = r['value']
+            if r['key'] == "Top 25s": temp_dict['top25'] = r['value']
+    except:
+        return False
 
     return temp_dict
 
