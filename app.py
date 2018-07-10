@@ -6,7 +6,7 @@ import configparser
 
 requests_cache.install_cache(backend='memory', expire_after=180)
 
-config = configparser.ConfigParser()
+config = configparser.RawConfigParser()
 config.read('config')
 
 player = config['API']['playername']
